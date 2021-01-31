@@ -22,7 +22,6 @@ const rootReducer = (state = INITIAL_STATE, action) => {
 			};
 		}
 		case "REMOVE_FROM_CART": {
-			console.log(action);
 			const { id } = action;
 			if (state.cart[id]) {
 				const qty = state.cart[id].qty - 1;

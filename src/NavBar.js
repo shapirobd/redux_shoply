@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./NavBar.css";
 
 const NavBar = () => {
+	const { cart, data } = useSelector((state) => ({
+		cart: state.cart,
+		data: state.data,
+	}));
+
+	let total = 0;
+	Object.keys(cart).map((p, keyIndex) => (total += cart[p].qty));
+	console.log(total);
+
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
+		<nav className="navbar navbar-dark bg-primary navbar-expand-lg">
 			<a className="navbar-brand" href="#">
 				Shoply
 			</a>
@@ -21,9 +31,15 @@ const NavBar = () => {
 
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
-					<li className="nav-item">
+					<li className="nav-item navbar-brand">
 						<a className="nav-link" href="#">
-							<i className="fas fa-shopping-cart"></i>
+							<i className="fas fa-shopping-cart">
+								<h6 id="cart-count-wrapper">
+									<span class="badge badge-pill badge-danger ml-2">
+										<b>{total}</b>
+									</span>
+								</h6>
+							</i>
 						</a>
 					</li>
 				</ul>

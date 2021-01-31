@@ -8,6 +8,26 @@
 	text-align: right;
 }
 
+.nav-link {
+	padding: 0;
+	height: 100%;
+}
+
+.collapse {
+	height: 100%;
+}
+
 .navbar-nav li {
 	float: right;
+}
+
+#cart-count-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 40%;
+}
+
+.fa-shopping-cart {
+	position: relative;
+	height: 100%;
 }

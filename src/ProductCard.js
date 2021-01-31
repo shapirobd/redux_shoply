@@ -13,20 +13,37 @@ const ProductCard = ({ product, cart, id }) => {
 		dispatch(removeFromCart(id));
 	};
 
+	const foundItem = Object.keys(cart).filter((p) => id === p);
+	const disabled = foundItem.length ? false : "disabled";
+
 	return (
 		<div className="col mb-4">
 			<div className="card h-100">
 				<img src={product.image_url} className="card-img-top" alt="..." />
-				<div className="card-body">
-					<h5 className="card-title text-dark">{product.name}</h5>
-					<p className="card-text text-dark">{product.description}</p>
-					<p className="card-text text-dark">{product.price}</p>
-					<button onClick={add} className="btn btn-primary">
-						Add to Cart
-					</button>
-					<button onClick={remove} className="btn btn-primary">
-						Remove from Cart
-					</button>
+				<div className="card-body bg-dark col d-flex align-content-between flex-wrap">
+					<div className="card-body-item">
+						<h5 className="card-title text-light">{product.name}</h5>
+					</div>
+					<div className="card-body-item">
+						<p className="card-text text-light my-3">{product.description}</p>
+					</div>
+					<div className="card-body-item">
+						<p>
+							<b className="card-text text-success">${product.price}</b>
+						</p>
+					</div>
+					<div className="card-body-item">
+						<button onClick={add} className="btn btn-primary mx-2 col-5">
+							Add
+						</button>
+						<button
+							onClick={remove}
+							className={"btn btn-danger mx-2 col-5"}
+							disabled={disabled}
+						>
+							Remove
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

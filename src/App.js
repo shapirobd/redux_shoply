@@ -5,8 +5,8 @@ import "./App.css";
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header container-fluid">
-				<NavBar />
+			<NavBar />
+			<header className="App-header container-fluid pt-5">
 				<ProductsList />
 			</header>
 		</div>
