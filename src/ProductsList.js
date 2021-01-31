@@ -9,10 +9,8 @@ const ProductsList = () => {
 		cart: state.cart,
 		data: state.data,
 	}));
-	console.log(cart);
-	console.log(data);
 	const products = data.products;
-	// Object.keys(products).map((p, keyIndex) => console.log(p));
+
 	return (
 		<div className="row row-cols-1 row-cols-md-4">
 			{Object.keys(products).map((p, keyIndex) => (

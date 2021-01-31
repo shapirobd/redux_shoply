@@ -1,4 +1,5 @@
-import ProductsList from "./ProductsList";
+import React from "react";
+import Routes from "./Routes";
 import NavBar from "./NavBar";
 import "./App.css";
 
@@ -7,7 +8,7 @@ function App() {
 		<div className="App">
 			<NavBar />
 			<header className="App-header container-fluid pt-5">
-				<ProductsList />
+				<Routes />
 			</header>
 		</div>
 	);
