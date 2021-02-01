@@ -9,6 +9,7 @@ const rootReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case "ADD_TO_CART": {
 			const { id } = action;
+			console.log(id);
 			const qty = state.cart[id] ? state.cart[id].qty + 1 : 1;
 			return {
 				...state,

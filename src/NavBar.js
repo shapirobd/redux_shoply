@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import CountBadge from "./CountBadge";
 import "./NavBar.css";
 
 const NavBar = () => {
-	const { cart, data } = useSelector((state) => ({
+	const { cart } = useSelector((state) => ({
 		cart: state.cart,
-		data: state.data,
 	}));
 
 	let total = 0;
-	Object.keys(cart).map((p, keyIndex) => (total += cart[p].qty));
-	console.log(total);
+	Object.keys(cart).map((p) => (total += cart[p].qty));
 
 	return (
 		<nav className="navbar navbar-dark bg-primary navbar-expand-lg">
@@ -33,15 +32,11 @@ const NavBar = () => {
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item navbar-brand">
-						<a className="nav-link" href="#">
+						<Link to="/cart" className="nav-link" href="#">
 							<i className="fas fa-shopping-cart">
-								<h6 id="cart-count-wrapper">
-									<span class="badge badge-pill badge-danger ml-2">
-										<b>{total}</b>
-									</span>
-								</h6>
+								<CountBadge total={total} cls="navbar-badge" />
 							</i>
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>

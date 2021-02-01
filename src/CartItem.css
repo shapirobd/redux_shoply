@@ -1,0 +1,42 @@
+.CartItem {
+	height: 15vw;
+	box-sizing: content-box;
+}
+
+.CartItem-main {
+	height: 100%;
+}
+
+.CartItem-col {
+	height: 100%;
+}
+
+.CartItem img {
+	height: 100%;
+}
+
+.CartItem-qty {
+	width: 100%;
+	text-align: center;
+}
+
+.CartItem-remove {
+	width: 100%;
+}
+
+.CartItem-add {
+	width: 100%;
+}
+
+.CartItem-remove-wrapper {
+	width: 25%;
+	height: 100%;
+}
+.CartItem-add-wrapper {
+	width: 25%;
+	height: 100%;
+}
+.CartItem-qty-wrapper {
+	width: 50%;
+	height: 100%;
+}

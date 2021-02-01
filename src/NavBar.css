@@ -21,10 +21,16 @@
 	float: right;
 }
 
-#cart-count-wrapper {
+.navbar-badge {
 	position: absolute;
 	top: 50%;
 	left: 40%;
+}
+
+.card-badge {
+	position: absolute;
+	top: -5%;
+	left: 92%;
 }
 
 .fa-shopping-cart {

@@ -1,39 +1,22 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "./actions";
-import { useParams, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import CountBadge from "./CountBadge";
 
-const ProductCard = ({ product, cart, id }) => {
-	console.log(product);
-	const dispatch = useDispatch();
-	const add = () => {
-		dispatch(addToCart(id));
-	};
-
-	const remove = () => {
-		dispatch(removeFromCart(id));
-	};
-
+const ProductCard = ({ product, cart, id, add, remove }) => {
 	const foundItem = Object.keys(cart).filter((p) => id === p);
 	const disabled = foundItem.length ? false : "disabled";
+	console.log(cart);
 
 	return (
 		<div className="col mb-4">
 			<div className="card h-100">
-				{/* <img src={product.image_url} className="card-img-top" alt="..." /> */}
 				<div className="card-body bg-dark col d-flex align-content-between flex-wrap">
 					<div className="card-body-item">
 						<h5 className="card-title text-light">{product.name}</h5>
+						{cart[id] ? (
+							<CountBadge total={cart[id].qty} cls="card-badge" />
+						) : null}
 					</div>
-					{/* <div className="card-body-item">
-						<p className="card-text text-light my-3">{product.description}</p>
-					</div>
-					<div className="card-body-item">
-						<p>
-							<b className="card-text text-success">${product.price}</b>
-						</p>
-					</div> */}
 					<div className="card-body-item">
 						<Link to={`/products/${id}`}>
 							<button className="btn btn-primary my-3 col-11">Details</button>

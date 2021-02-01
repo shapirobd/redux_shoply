@@ -3,21 +3,19 @@ import { Route } from "react-router-dom";
 import ProductsList from "./ProductsList";
 import ProductInfo from "./ProductInfo";
 import { useSelector } from "react-redux";
+import Cart from "./Cart";
 
 const Routes = () => {
-	const { cart, data } = useSelector((state) => ({
-		cart: state.cart,
-		data: state.data,
-	}));
-
 	return (
 		<>
 			<Route exact path="/">
 				<ProductsList />
 			</Route>
 			<Route path="/products/:id">
-				{console.log("INFO")}
-				<ProductInfo cart={cart} data={data} />
+				<ProductInfo />
+			</Route>
+			<Route path="/cart">
+				<Cart />
 			</Route>
 		</>
 	);
