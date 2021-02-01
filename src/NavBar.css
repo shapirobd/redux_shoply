@@ -1,0 +1,39 @@
+.navbar {
+	width: 100%;
+}
+
+.navbar-nav {
+	width: 100%;
+	flex-direction: column !important;
+	text-align: right;
+}
+
+.nav-link {
+	padding: 0;
+	height: 100%;
+}
+
+.collapse {
+	height: 100%;
+}
+
+.navbar-nav li {
+	float: right;
+}
+
+.navbar-badge {
+	position: absolute;
+	top: 50%;
+	left: 40%;
+}
+
+.card-badge {
+	position: absolute;
+	top: -5%;
+	left: 92%;
+}
+
+.fa-shopping-cart {
+	position: relative;
+	height: 100%;
+}

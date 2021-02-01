@@ -1,0 +1,18 @@
+.card {
+	border: none;
+}
+
+.card-img-top {
+	width: 100%;
+	height: 25vw;
+	object-fit: contain;
+}
+
+.card-title {
+	text-transform: capitalize;
+}
+
+.card-body-item {
+	display: block;
+	width: 100%;
+}
